@@ -1,0 +1,62 @@
+﻿@*
+    @{
+        ViewData["Title"] = "Login";
+    }
+
+    <h1>Login Form</h1>
+
+    <h3>Email: </h3>
+    <input type="text" name="Email"/>
+    <h3>Password: </h3>
+    <input type="text" name="Password"/>
+    <button>Submit</button>
+    <h3>Manage Products Form</h3>
+    <h5>This Form spical for Admin User tp manage the products:</h5>
+    <button name="B1" value="Add">Add</button>
+    <button name="B1" value="Edit">Edit</button>
+    <button name="B1" value="Delete">Delete</button>
+    <button name="B1" value="Show">Show</button>*@
+
+@model WebProject.Models.Login
+
+@addTagHelper *,Microsoft.AspNetCore.MVC.TagHelpers
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<h4>Login Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="ID" class="control-label"></label>
+            <input asp-for="ID" class="form-control" />
+            <span asp-validation-for="ID" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="col-lg-10">
+                <p> <a asp-action="ProductManagement" class="btn btn-lg btn-primary">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
